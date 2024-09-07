@@ -1,0 +1,44 @@
+import random
+p=0
+
+check=""
+words=["apple","fig","bag", "cherry", "orange", "bike"]
+word=random.choice(words)
+
+print (words)
+
+wrongWord=0
+n=len(word)
+m=0
+while check!=word:
+    
+    wordInput=input("Enter the word")
+    if wordInput in word:
+        check=check+wordInput
+        m=+1
+        if check==word:
+            print("you won the game:2")
+            break
+        for j in range(m):
+             if check[j] in word:
+                 p=p+1
+                 if p==len(word):
+                     print("You won the game1")
+                     check=word
+                     break
+                 else:
+                    continue        
+    else:
+        n=n+1
+        
+        wrongWord=wrongWord+1
+        print("Yu entered wrong word:", wrongWord)
+        if wrongWord==6:
+            print("you lost the game:")
+            print("The word was:",word)
+            break
+        else:
+            continue
+
+
+
